@@ -10,6 +10,8 @@ body {
     linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%);
     height: 100vh;
     padding: 1rem;
+    background-repeat: no-repeat;
+    
 }
 
 .title-header {
@@ -17,6 +19,18 @@ body {
     justify-content: space-between;
     align-items: center;
     text-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
+}
+
+@media screen and (max-width: 50rem) {
+    .title-header {
+        justify-content: space-around;
+    }
+}
+
+@media screen and (max-width: 43rem) {
+    .title-header {
+        flex-direction: column;
+    }
 }
 
 .score-label {
@@ -45,7 +59,7 @@ body {
 }
 
 .game-card {
-    display: flex;
+    display: none;
     justify-content: space-evenly;
     background: rgb(49 116 203);
     color: rgb(208 201 182);
@@ -55,14 +69,19 @@ body {
     align-items: center;
     flex-direction: column;
     margin: auto;
-    visibility: hidden;
     font-weight: bold;
     box-shadow: 0 41px 54px -12px rgb(0 0 0 / 56%), 0 4px 25px 0px rgb(0 0 0 / 12%), 0 8px 10px -5px rgb(0 0 0 / 20%);
 }
 
+@media screen and (max-width: 50rem) {
+    .game-card {
+        width: 70%;
+    }
+}
+
 .clue-text {
     font-size: 1.5rem;
-    margin: 10px;
+    padding: 2em;
 }
 
 #button-container {
@@ -111,19 +130,25 @@ body {
     box-shadow: 0 41px 54px -12px rgb(0 0 0 / 56%), 0 4px 25px 0px rgb(0 0 0 / 12%), 0 8px 10px -5px rgb(0 0 0 / 20%);
 }
 
+@media screen and (max-width: 50rem) {
+    #categoryDiv {
+        width: 60%;
+    }
+}
+
 .inner-card {
-    margin: auto;
+    width: 100%;
 }
 
 .results .correct-result {
-    visibility: hidden;
+    display: none;
 }
 
 .results .incorrect-result {
-    visibility: hidden;
+    display: none;
 }
 
 .answerDiv {
-    visibility: hidden;
-    margin: 20px;
+    display: none;
+    margin: 5em;
 }

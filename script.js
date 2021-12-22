@@ -29,10 +29,10 @@ function getCategory() {
   buttonDiv.style.display = "none";
   //   startButton.style.visibility = "hidden";
   categoryDiv.style.visibility = "visible";
-  gameCard.style.visibility = "visible";
-  answerDiv.style.visibility = "visible";
-  correctResults.style.visibility = "hidden";
-  incorrectResults.style.visibility = "hidden";
+  gameCard.style.display = "flex";
+  answerDiv.style.display = "block";
+  correctResults.style.display = "none";
+  incorrectResults.style.display = "none";
 
   const categoriesURL =
     "https://jservice.kenzie.academy/api/random-clue?valid=true";
@@ -90,7 +90,7 @@ function correctAnswer() {
   score += 1;
   cluesArray.splice(index, 1);
   displayScore.innerHTML = `${score}`;
-  correctResults.style.visibility = "visible";
+  correctResults.style.display = "block";
 
   if (cluesArray.length < 1) {
     setTimeout(() => {
@@ -109,14 +109,14 @@ function continueGame() {
   clueText.innerHTML = `${currentQuestion}`;
   gameAnswer = cluesArray[index].answer;
   console.log(gameAnswer);
-  correctResults.style.visibility = "hidden";
+  correctResults.style.display = "none";
   userAnswer.value = "";
 }
 
 function incorrectAnswer() {
   console.log(userAnswer.value);
-  correctResults.style.visibility = "hidden";
-  incorrectResults.style.visibility = "visible";
+  correctResults.style.display = "none";
+  incorrectResults.style.display = "block";
   setTimeout(() => {
     restartGame();
   }, 1000);
@@ -125,11 +125,11 @@ function incorrectAnswer() {
 function restartGame() {
   score = 0;
   displayScore.innerHTML = `${score}`;
-  categoryDiv.style.visibility = "hidden";
-  gameCard.style.visibility = "hidden";
-  answerDiv.style.visibility = "hidden";
+  categoryDiv.style.display = "none";
+  gameCard.style.display = "none";
+  answerDiv.style.display = "none";
   buttonDiv.style.display = "block";
   //   startButton.style.visibility = "visible";
-  incorrectResults.style.visibility = "hidden";
-  correctResults.style.visibility = "hidden";
+  incorrectResults.style.display = "none";
+  correctResults.style.display = "none";
 }

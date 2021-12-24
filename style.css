@@ -14,6 +14,10 @@ body {
     
 }
 
+.jeopardyApp {
+    height: 100%;
+}
+
 .title-header {
     display: flex;
     justify-content: space-between;
@@ -48,22 +52,27 @@ body {
 .gameboard {
     display: flex;
     align-items: center;
+    padding-top: 1em;
     
 }
 
-#jeopardyApp {
+.jeopardyApp {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
 
+/* @media screen and (max-width: 705px) {
+    
+} */
+
 .game-card {
     display: none;
     justify-content: space-evenly;
     background: rgb(49 116 203);
     color: rgb(208 201 182);
-    height: 25rem;
+    height: 20rem;
     border-radius: 10px;
     width: 40rem;
     align-items: center;
@@ -90,7 +99,7 @@ body {
     align-items: center;
     width: 60%;
     height: 10rem;
-    margin: 10rem auto;
+    margin: 8rem auto;
 }
 
 #start-button {
@@ -141,14 +150,18 @@ body {
 }
 
 .results .correct-result {
-    display: none;
+    visibility: hidden;
 }
 
 .results .incorrect-result {
-    display: none;
+    visibility: hidden;
+}
+
+.results {
+    margin-top: -2em;
 }
 
 .answerDiv {
     display: none;
-    margin: 5em;
+    margin: 4em;
 }

@@ -31,8 +31,6 @@ function getCategory() {
   categoryDiv.style.visibility = "visible";
   gameCard.style.display = "flex";
   answerDiv.style.display = "block";
-  correctResults.style.display = "none";
-  incorrectResults.style.display = "none";
 
   const categoriesURL =
     "https://jservice.kenzie.academy/api/random-clue?valid=true";
@@ -90,7 +88,7 @@ function correctAnswer() {
   score += 1;
   cluesArray.splice(index, 1);
   displayScore.innerHTML = `${score}`;
-  correctResults.style.display = "block";
+  correctResults.style.visibility = "visible";
 
   if (cluesArray.length < 1) {
     setTimeout(() => {
@@ -109,14 +107,14 @@ function continueGame() {
   clueText.innerHTML = `${currentQuestion}`;
   gameAnswer = cluesArray[index].answer;
   console.log(gameAnswer);
-  correctResults.style.display = "none";
+  correctResults.style.visibility = "hidden";
   userAnswer.value = "";
 }
 
 function incorrectAnswer() {
   console.log(userAnswer.value);
-  correctResults.style.display = "none";
-  incorrectResults.style.display = "block";
+  correctResults.style.visibility = "hidden";
+  incorrectResults.style.visibility = "visible";
   setTimeout(() => {
     restartGame();
   }, 1000);
@@ -125,11 +123,11 @@ function incorrectAnswer() {
 function restartGame() {
   score = 0;
   displayScore.innerHTML = `${score}`;
-  categoryDiv.style.display = "none";
+  categoryDiv.style.visibility = "hidden";
   gameCard.style.display = "none";
   answerDiv.style.display = "none";
   buttonDiv.style.display = "block";
   //   startButton.style.visibility = "visible";
-  incorrectResults.style.display = "none";
-  correctResults.style.display = "none";
+  incorrectResults.style.visibility = "hidden";
+  correctResults.style.visibility = "hidden";
 }
